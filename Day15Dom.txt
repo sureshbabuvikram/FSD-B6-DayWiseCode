@@ -1,0 +1,452 @@
+simple example:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="buttonEvent1()" >click</button>
+</body>
+<script src="script.js" ></script>
+
+script.js:
+
+function buttonEvent1(){
+  console.log("first button event");
+  
+}
+
+Example:1 getElementById
+
+<html lang="en">
+  <head>
+    <title>getElementById example</title>
+  </head>
+  <style>
+    #para{
+        color: green;
+    }
+  </style>
+  <body>
+    <p id="para">Some text here</p>
+    <button onclick="changeColor('blue');">blue</button>
+    <button onclick="changeColor('red');">red</button>
+  </body>
+
+  <script src="script.js" ></script>
+</html>
+
+
+//script.js
+function changeColor(newColor) {
+    const elem = document.getElementById("para");
+    // console.log("elem", elem);
+    
+    elem.style.color = newColor;
+  }
+  
+
+example2: error ->  document.getElementById , we cannot use other one
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent-id">
+      <p>hello word1</p>
+      <p id="test1">hello word2</p>
+      <p>hello word3</p>
+      <p>hello word4</p>
+    </div>
+    <script>
+      const parentDOM = document.getElementById("parent-id");
+      const test1 = parentDOM.getElementById("test1");
+      // throw error
+      // Uncaught TypeError: parentDOM.getElementById is not a function
+      
+    //   const test1 = document.getElementById("test1");
+    //   test1.textContent= " change content"
+      
+    </script>
+  </body>
+</html>
+
+Example- 3 getElementsByClassName
+
+<html lang="en">
+  <body>
+    <div id="parent-id">
+      <p>hello world 1</p>
+      <p class="test">hello world 2</p>
+      <p>hello world 3</p>
+      <p>hello world 4</p>
+    </div>
+
+    <script>
+      const parentDOM = document.getElementById("parent-id");
+        console.log(parentDOM);
+        
+      const test = parentDOM.getElementsByClassName("test"); 
+      console.log(test);
+
+      const testTarget = parentDOM.getElementsByClassName("test")[0]; 
+      console.log(testTarget); 
+    </script>
+  </body>
+</html>
+
+
+Example:4  document.getElementsByClassName
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementsByClassName Example</title>
+  <style>
+    .myClass {
+      color: blue;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Multiple paragraph elements with the same class -->
+  <p class="myClass">This is the first paragraph.</p>
+  <p class="myClass">This is the second paragraph.</p>
+  <p class="myClass">This is the third paragraph.</p>
+
+  <!-- A button to trigger the change -->
+  <button id="changeStyleButton">Change Style of All Paragraphs</button>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+
+function changeStyle() {    
+    const elements = document.getElementsByClassName('myClass');
+
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].style.color = 'green'; 
+      elements[i].style.fontSize = '24px'; 
+    }
+  }  
+ 
+  document.getElementById('changeStyleButton').addEventListener('click', changeStyle);
+  
+
+  Example:5 getElementsByTagName
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>getElementsByTagName Example</title>
+  <style>
+    p {
+      font-size: 18px;
+      color: blue;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <p>This is the first paragraph.</p>
+  <p>This is the second paragraph.</p>
+  <p>This is the third paragraph.</p>
+  
+  <button id="changeTextButton">Change All Paragraphs</button>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+
+function changeParagraphText() {
+    const paragraphs = document.getElementsByTagName('p');
+  
+    // console.log("paragraphs", paragraphs[1].textContent);
+    
+    for (let i = 0; i < paragraphs.length; i++) {
+      paragraphs[i].textContent = `This is updated paragraph ${i + 1}.`;
+    }
+  }
+  
+  document.getElementById('changeTextButton').addEventListener('click', changeParagraphText);
+  
+
+  Example: 6  document.querySelector
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+  <style>
+    .myClass {
+      font-size: 18px;
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+ 
+  <p class="myClass">This is the first paragraph with myClass.</p>
+  <p class="myClass">This is the second paragraph with myClass.</p>
+
+  <button id="changeTextButton">Change First Paragraph</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js
+
+function changeFirstParagraph() {
+  const firstParagraph = document.querySelector('.myClass');
+  firstParagraph.textContent = 'The first paragraph has been changed!';
+}
+
+document.getElementById('changeTextButton').addEventListener('click', changeFirstParagraph);
+
+
+Example: 7  document.querySelector
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+  <style>
+    .content {
+      color: blue;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+ 
+  <h1 class="header">This is the heading</h1>
+  <p class="content">This is the first paragraph.</p>
+  <p class="content">This is the second paragraph.</p>
+
+
+  <button id="changeTextButton">Change First Paragraph</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+
+function changeFirstParagraph() {   
+    const firstParagraph = document.querySelector('.content'); 
+    firstParagraph.textContent = 'This is the updated text for the first paragraph.';
+  } 
+ 
+  document.getElementById('changeTextButton').addEventListener('click', changeFirstParagraph);
+  
+
+Example: 8 document.querySelectorAll
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example</title>
+  <style>
+    .content {
+      color: blue;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body>
+ 
+  <h1 class="header">This is the heading</h1>
+  <p class="content">This is the first paragraph.</p>
+  <p class="content">This is the second paragraph.</p>
+
+
+  <button id="changeTextButton">Change First Paragraph</button>
+  <button id="changeTextButton2">Change First Paragraph</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+
+
+function changeFirstParagraph() {
+    const firstParagraph = document.querySelector('.content'); 
+    firstParagraph.textContent = 'This is the updated text for the first paragraph.';   
+  }
+
+  function changeSecondParagraph() {
+    const firstParagraph = document.querySelectorAll('.content'); 
+
+  const secondParagraph = firstParagraph[1]
+    secondParagraph.textContent = 'This is the updated text for the second paragraph.';
+  }
+ 
+  document.getElementById('changeTextButton').addEventListener('click', changeFirstParagraph);
+  document.getElementById('changeTextButton2').addEventListener('click', changeSecondParagraph);
+  
+
+  Example9: querySelector by id
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>querySelector Example with ID</title>
+  <style>
+    #firstParagraph {
+      color: blue;
+      font-size: 18px;
+    }
+    
+    #secondParagraph {
+      color: red;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <p id="firstParagraph">This is the first paragraph.</p>
+  <p id="secondParagraph">This is the second paragraph.</p>
+
+  <button id="changeFirstParagraphButton">Change First Paragraph</button>
+  <button id="changeSecondParagraphButton">Change Second Paragraph</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+function changeFirstParagraph() {
+    const firstParagraph = document.querySelector('#firstParagraph');
+    firstParagraph.textContent = 'This is the updated text for the first paragraph.';
+  }
+  
+  function changeSecondParagraph() {
+    const secondParagraph = document.querySelector('#secondParagraph');
+    secondParagraph.textContent = 'This is the updated text for the second paragraph.';
+  }
+  
+  document.querySelector('#changeFirstParagraphButton').addEventListener('click', changeFirstParagraph);
+  document.querySelector('#changeSecondParagraphButton').addEventListener('click', changeSecondParagraph);
+  
+
+  Example:10 Append
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>append() Example</title>
+  <style>
+    #container {
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>append() Example</h1>
+  
+  <div id="container">
+    <p>This is the original content inside the container.</p>
+  </div>
+
+  <button id="appendButton">Append Content</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js
+function appendContent() {
+    const container = document.getElementById('container');
+    
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is a new paragraph added with append().';
+    
+    container.append(newParagraph, ' Additional text added with append().');
+  }
+  
+  document.getElementById('appendButton').addEventListener('click', appendContent);
+  
+
+  Example:11 Appendchild
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>appendChild() Example</title>
+  <style>
+    #container {
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>appendChild() Example</h1>
+  
+  <div id="container">
+    <p>This is the original content inside the container.</p>
+  </div>
+
+  <button id="appendChildButton">Append New Paragraph</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+
+function appendChildContent() {
+    const container = document.getElementById('container');
+    
+    const newParagraph = document.createElement('p');
+    newParagraph.textContent = 'This is a new paragraph added with appendChild().';
+    
+    container.appendChild(newParagraph);
+  }
+  
+  document.getElementById('appendChildButton').addEventListener('click', appendChildContent);
+  
+
+  

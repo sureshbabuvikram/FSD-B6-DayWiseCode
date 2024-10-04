@@ -1,0 +1,164 @@
+// function
+let a=10,b=20
+
+function display(){
+    console.log(a,b);
+    
+}
+display();
+
+
+// res(10,20) // error
+
+const res=function(a,b){
+    console.log(a,b);    
+}
+res(10,20)
+
+//IIFE
+let a=10;
+(function(){
+    let a=20
+    console.log(a);    
+})();
+
+//Anonymous function
+setTimeout(function(){    
+    console.log("Anonymous function");    
+},3000)
+
+
+//hof , callback, return
+function normalFun(){
+    console.log("Nor fun");
+    
+}
+function hof(callback){
+    console.log("hof");
+    callback()
+    return function retFun(){
+        console.log("return fun");
+        
+    }    
+}
+const res= hof(normalFun)
+res();
+
+
+//If if elseif nestedif ternary switch
+
+let login=false;
+
+if (login == true) {
+  console.log("log successfully");
+} else {
+  console.log("log failure");
+}
+
+
+let proPrice = 799
+
+if(proPrice >=1000){
+    console.log(" 1000");
+    
+}else if(proPrice>=900){
+    console.log(" 900");
+    
+} else if (proPrice >= 800){
+    console.log("800");
+    
+}else{
+    console.log("below 800");
+    
+}
+
+
+let productPrice = 100;
+
+if(productPrice >=800){
+    if (productPrice <=1000) {
+        console.log("<=1000");
+        
+    }else{
+        console.log(">1000");
+        
+    }
+}else{
+    console.log("<800");
+    
+}
+
+let price= 10
+const res = price >= 50 ? "greater than 50" : "less than 50" ;
+console.log(res);
+
+
+let order = 3;
+let message;
+
+switch (order) {
+  case 1:
+    message = "You ordered a jeans.";
+    break;
+  case 2:
+    message = "You ordered a shirt.";
+    break;
+  case 3:
+    message = "You ordered a kids jeans.";
+    break;
+  case 4:
+    message = "You ordered a ladies garments.";
+    break;
+  default:
+    message = "Invalid selection. Please choose from the menu.";
+}
+
+console.log(message);
+
+
+// while
+let count = 5;
+
+while (count < 5) {
+  console.log("Count is: " + count);
+  count++;
+}
+//do while
+let count = 5;
+
+do {
+  console.log("Count is: " + count);
+  count++;
+} while (count < 5);
+
+
+//for, forin, forof, nested
+for (let i = 0; i < 5; i++) {
+    console.log("Iteration number: " + i);
+  }
+
+  
+
+  const person = {
+    name: "suresh",
+    age: 35,
+    city: "chennai"
+  };
+  
+  for (let key in person) {
+    console.log(key + ": " + person[key]);
+  }
+
+  const numbers = [1, 2, 3, 4, 5];
+for (let num of numbers) {
+  console.log("Number: " + num);
+}
+
+for (let i = 1; i <= 3; i++) {
+    for (let j = 1; j <= 3; j++) {
+      console.log("i = " + i + ", j = " + j);
+    }
+  }
+  
+
+

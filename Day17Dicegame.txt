@@ -1,0 +1,245 @@
+
+index.html
+
+Structure:
+<div class='container'>
+    <h1 class=''>Player Turn</h1>
+    <div class=''> //roll-dice         
+         //Score counter div
+          <div class=''>
+            <div class=''>
+                Score: <span class=''>0</span>
+            </div>
+            <div class=''>
+                Score: <span class=''>0</span>
+            </div>
+        </div>
+
+        //dice-output - div
+         <div class=''>
+            <div class=''>0</div>
+            <div class=''>0</div>
+        </div>
+
+        //button - div    
+        <button class=''>Dice Roll </button>
+
+    </div>
+   </div> 
+
+
+
+
+// With class-name
+<div class='container'>
+    <h1 class='h1'>Player <span class='player-turn'></span> Turn</h1>
+    <div class='roll-dice'>
+        <div class='score-counter'>
+            <div class='player'>
+                Score: <span class='player1-score'>0</span>
+            </div>
+            <div class='player'>
+                Score: <span class='player2-score'>0</span>
+            </div>
+        </div>
+        <div class='dice-output'>
+            <div class='dice output1'>0</div>
+            <div class='dice output2'>0</div>
+        </div>
+        <button class='play-button'>Dice Roll </button>
+    </div>
+</div>
+
+
+
+Style.css
+
+body{
+    font-family: sans-serif;
+    height:100%;
+    width:100%;
+    background-color: #1f2a7e;
+  }
+
+  .container{
+    max-width: 700px;
+    height: 350px;
+    background: #36f297;
+    margin: 90px auto;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .container h1{
+    font-size: 48px;
+    margin-top: 0;
+    padding-top: 20px;
+    color:#0c86a4;
+  }
+
+
+   .roll-dice{
+    max-width: 500px;
+    height: 350px;
+    margin: 0 auto;
+  }
+
+  .score-counter{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .score-counter .player{
+    font-size: 32px;
+    font-weight: 900;
+    color: #1f2a7e;
+  }
+
+  .dice-output{
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+
+  .dice-output .dice{
+    border: none;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    font-size: 60px;
+    font-weight: 400;
+    border-radius: 5px;
+    background: rgb(78, 184, 233);
+    color: #F0F0F0;
+  }
+
+
+  .dice-output .dice.output1{
+    margin-left: 50px;
+  }
+  .dice-output .dice.output2{
+    margin-right: 50px;
+  }
+
+  .play-button{
+    width: 50%;
+    background: #03a9f4;
+    padding: 10px 30px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 28px;
+    margin-top: 70px;
+  }
+
+
+
+
+  script.js:
+
+  1st step:
+
+    const player1Score = document.querySelector('.player1-score');
+    const player2Score = document.querySelector('.player2-score');
+    const diceOutput1 = document.querySelector('.dice.output1');
+    const diceOutput2 = document.querySelector('.dice.output2');
+    const rollDice = document.querySelector('.play-button');
+
+2nd step:
+
+    let player1_score = 0;
+    let player2_score = 0;
+    let check = true;
+    let gameOver = false;
+   
+3rd step:
+
+    rollDice.addEventListener('click', 
+    function()
+{
+  const dice_value = Math.floor(Math.random()*6)+1;
+
+  if(gameOver)
+  {
+    console.log("first condition");
+    
+   
+  }
+  else
+  {
+    if(check == true)
+    {
+      console.log("sec cond");    
+
+    }
+    else
+    {
+      console.log("else");
+      
+      
+
+    }
+  }
+
+})
+
+
+4th step:
+
+//gameOver == true
+
+if(gameOver)
+  {
+    console.log("first condition");
+    
+    player1_score = 0;
+    player2_score = 0;
+    document.querySelector('.h1').innerText = 'Player Turn';  
+    diceOutput1.innerText = '0';
+    diceOutput2.innerText = '0';
+    player1Score.innerText = '0';
+    player2Score.innerText = '0';
+    rollDice.innerText = 'Dice Roll';
+    gameOver = false;
+  }
+
+//gameOver == false
+  else
+  {
+    if(check == true)
+    {
+      console.log("sec cond");
+
+      document.querySelector('.h1').innerText = 'Player 1 Turn';     
+      diceOutput1.innerText = dice_value;
+      player1_score += dice_value;
+      player1Score.innerText = player1_score;
+      if(player1_score >= 20)
+      {
+        gameOver = true;
+        document.querySelector('.h1').innerText = 'Player 1 wins ';
+        rollDice.innerText = 'Reset 🔁';
+      }
+      check = false;
+
+    }
+    else
+    {
+      console.log("else");
+      
+      document.querySelector('.h1').innerText = 'Player 2 Turn';   
+      diceOutput2.innerText = dice_value;
+      player2_score += dice_value;
+      player2Score.innerText = player2_score;
+      if(player2_score >= 20)
+      {
+        gameOver = true;
+        document.querySelector('.h1').innerText  = 'Player 2 wins ';
+        rollDice.innerText = 'Reset 🔁';
+      }
+      check = true;
+
+    }
+  }

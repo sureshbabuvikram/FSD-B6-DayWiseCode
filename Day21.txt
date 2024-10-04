@@ -1,0 +1,233 @@
+Example 1: // ReferenceError: x is not defined
+
+function example() {
+  if (true) {
+    let x = 10;
+  }
+  console.log(x); 
+}
+
+Example 2: // TypeError: Assignment to constant variable.
+
+  function example1() {
+    const x = 10;
+    x = 20; 
+  }
+
+ Example 3:
+ function example() {
+    var x = 10; 
+    let y = 20; 
+    const z = 30; 
+  
+    if (true) {
+      var x = 40; 
+      let y = 50; 
+      const z = 60; 
+    }
+  
+    console.log(x); 
+    console.log(y); 
+    console.log(z); 
+  }
+
+
+Example 4: Arrow function
+
+// Traditional function expression
+function add(a, b) {
+    return a + b;
+  };
+  console.log(add(10,20));
+
+  // Arrow function
+  
+  const add1 = (a, b) => a + b;
+  console.log(add1(10,20));
+
+
+Example 5:
+  const numbers = [1, 2, 3, 4, 5];
+
+// Traditional function expression
+
+const squaredNumbers = numbers.map(function(num) {
+    return num * num;
+  });
+  console.log(squaredNumbers);
+
+  //Arrow Function
+
+const newArr=numbers.map(num=>num*num)
+console.log(newArr);
+
+
+Example:6 students exercise
+
+const doubleNumbers = arr => arr.map(num => num * 2);
+
+console.log(doubleNumbers([1, 2, 3]));
+
+
+Example:7 Template Literals
+
+// Before ES6 
+const myName = "Suresh";
+const age = 35;
+const greeting = "Hello, my name is " + myName + " and I am " + age + " years old.";
+
+console.log(greeting); 
+
+
+// ES6
+const myName = "Suresh";
+const age = 35;
+const greeting = `Hello, my name is ${myName} and I am ${age} years old.`;
+
+console.log(greeting); 
+
+
+Example:8 Multiline
+
+const multiLine = "This is line one.\nThis is line two.";
+console.log(multiLine);
+
+const multiLine2 = `This is line one 
+This is line two.`;
+console.log(multiLine2);
+
+
+Example:9 expresion ${}
+
+const a = 10;
+const b = 20;
+console.log("The sum of a and b is",a + b); 
+console.log(`The sum of a and b is ${a + b}`); 
+
+const getName = () => "suresh";
+console.log(`Hello, ${getName()}`);
+
+
+Example 10: execute this one and give same type of exercise to learner
+
+const user = {
+    name: "suresh",
+    designation:"FSD",
+    location: "chennai"
+  };
+  
+  // Generating HTML using template literals
+  const userCard = `
+    <div >
+      <h2>${user.name}</h2>
+      <p>Age: ${user.designation}</p>
+      <p>Location: ${user.location}</p>
+    </div>
+  `;
+  
+  // Inserting into the DOM
+  document.body.innerHTML = userCard;
+
+
+Example :11 Spread and rest operator
+
+// Spread operator
+
+const arr1 = [1, 2, 3];
+const arr2=[4,5,6]
+const arr3 = [...arr1, ...arr2]; 
+console.log(arr3); 
+
+
+const numbers = [10, 20, 30];
+const sum = (a, b, c) => a + b + c;
+console.log(sum(10,20,30));
+console.log(sum(...numbers));
+
+
+const person = { name: "Suresh", age: 35 };
+const job = { occupation: "FSD" };
+
+const personWithJob = { ...person, ...job };
+console.log(personWithJob); 
+
+
+// Rest operator
+
+function sum(...numbers) {
+    return numbers.map((num) => num * 2);
+  }
+  
+  console.log(sum(1, 2, 3, 4)); 
+  console.log(sum(10, 20)); 
+
+
+Array Destructuring:
+
+  const numbers = [1, 2, 3, 4, 5];
+const [first, second, ...rest] = numbers;
+console.log(first); 
+console.log(second); 
+console.log(rest); 
+
+Object Destructuring:
+
+const user = { userName: "Suresh", age: 35, city: "Chennai", occupation: "FSD" };
+const { userName, ...details } = user;
+
+console.log(userName); 
+console.log(details); 
+
+
+Example :12  Learner exercise
+
+function multiply(...numbers) {
+    return numbers.map((num) => num * 2);
+  }
+  
+  console.log(multiply(2, 3, 4)); 
+  console.log(multiply(5, 6)); 
+
+
+Example :13  Array Destructuring
+
+const arr = [1, 2, 3];
+const [first, second, third] = arr;
+
+console.log(first);  
+console.log(second); 
+console.log(third);  
+
+
+Example :14  Object Destructuring
+
+const person = {
+    myName: "Suresh",
+    age: 35,
+    city: "Chennai"
+  };
+  
+  const myName = person.myName;
+  const age = person.age;
+  
+  console.log(myName); 
+  console.log(age);  
+
+
+Example :15
+
+  const user = {
+    name: "Suresh",
+    address: {
+      city: "Chennai",
+      state: "Tamilnadu"
+    }
+  };
+
+    //const { name, address } = user;
+      const { name, address:{city, state} } = user;
+  
+  console.log(name);  
+  //console.log(address);  
+  console.log(city);  
+  console.log(state); 

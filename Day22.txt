@@ -1,0 +1,195 @@
+Example1: Map
+
+const prices = [100, 200, 300];
+const offerPrices = prices.map(price => price + 10);
+console.log(offerPrices);
+
+
+Example2: Filter
+const prouctPrice = [12000, 18000, 25000, 30000, 15000];
+
+const filterPrice = prouctPrice.filter(priceVal => priceVal >= 20000);
+
+console.log(filterPrice);
+
+Example3: Reduce
+
+const expenses = [100, 200, 300, 400];
+
+const totalExpenses = expenses.reduce((total, expense)=>total + expense ,0)
+
+// const totalExpenses = expenses.reduce((total, expense) => {
+//     console.log(total);
+//     console.log(expense);
+    
+//     return total + expense}, 0);
+
+console.log(totalExpenses); 
+
+
+Example 4 :  learner task
+
+const scores = [30, 45, 20, 70, 60];
+
+const updatedScores = scores.map(score => score + 5);
+
+const passingScores = updatedScores.filter(score => score >= 40);
+
+const totalPassingScores = passingScores.reduce((total, score) => total + score, 0);
+
+console.log(updatedScores);
+console.log(passingScores);
+console.log(totalPassingScores);
+
+Example 5: Closure
+
+ function closure(){   
+    return function nestedFun(){
+        let b= 20        
+        console.log(b); 
+        return b       
+    }    
+ }
+ const ret=closure()
+ const ret1= ret()
+ console.log(ret1);
+
+
+Example 6: Closure
+  function taskTracker() {
+    let tasksCompleted = 0;    
+    return function() {
+        tasksCompleted++;
+        console.log(`You have completed ${tasksCompleted} tasks.`);
+    };
+}
+
+const completeTask = taskTracker();
+completeTask(); 
+completeTask(); 
+
+Example 7: Currying
+
+function multiply(a) {
+    return function(b) {
+      return function(c) {
+        return a * b * c;
+      };
+    };
+  }
+  
+  console.log(multiply(5)(5)(5)); 
+
+Example 8: Currying
+
+  function applyDiscount(discount) {
+    return function(price) {
+      return price - price * discount;
+    };
+  } 
+
+  const tenPercentOff = applyDiscount(0.10);  
+  console.log(tenPercentOff(100));
+  console.log(tenPercentOff(200));   
+
+  const twentyPercentOff = applyDiscount(0.20);  
+  console.log(twentyPercentOff(100));
+  console.log(twentyPercentOff(200)); 
+
+
+  Example 9 : ForEach
+
+  const prices = [100, 200, 300];
+  prices.forEach(price =>{  
+    price =price + 10;
+    console.log(price);    
+});
+
+  Example 10 : ForEach
+
+const orders = [
+    { id: 1, product: 'Laptop', shipped: false },
+    { id: 2, product: 'Phone', shipped: false },
+    { id: 3, product: 'Tablet', shipped: false }
+];
+orders.forEach((order)=> {
+    order.shipped = true; 
+});
+console.log(orders);
+ 
+
+
+Example 11: Joining Array Elements into a String
+
+const fruits = ['Apple', 'Banana', 'Mango'];
+
+// Join array elements with a space
+const fruitString = fruits.join(' ');
+console.log(fruitString); 
+
+// Join array elements with a hyphen
+const fruitHyphen = fruits.join('-');
+console.log(fruitHyphen); 
+
+
+
+Example 12: Split
+
+const sentence = 'JavaScript is a fun language';
+
+// Split the string into words using a space as the separator
+const words = sentence.split(' ');
+console.log(words); 
+
+
+
+Example : 13 join and spilit
+
+const sentence = 'Convert this sentence to snake case';
+
+// Step 1: Split the string into an array of words
+const wordsArray = sentence.split(' ');
+console.log(wordsArray);
+
+// Step 2: Join the array of words with underscores
+const snakeCase = wordsArray.join('_');
+console.log(snakeCase); 
+
+
+
+
+
+ Example 14 : Call, apply , bind   (if needed take it or leave it)
+
+call , apply, bind -> 
+
+const person1 = {
+    name: 'John',
+    birthYear: 1990,
+};
+
+const person2 = {
+    name: 'Alice',
+    birthYear: 1995,
+};
+
+function calculateAge(currentYear) {
+    console.log(${this.name} is ${currentYear - this.birthYear} years old.);
+}
+
+// Using call()
+calculateAge.call(person1, 2024); 
+calculateAge.call(person2, 2024); 
+
+// Using apply()
+calculateAge.apply(person1, [2024]); 
+calculateAge.apply(person2, [2024]); 
+
+// Using bind()
+const calculateAgeForJohn = calculateAge.bind(person1);
+const calculateAgeForAlice = calculateAge.bind(person2);
+
+calculateAgeForJohn(2024); 
+calculateAgeForAlice(2024);
+
+

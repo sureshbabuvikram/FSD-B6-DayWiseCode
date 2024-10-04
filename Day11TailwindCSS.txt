@@ -1,0 +1,224 @@
+Example :1 step-1 Using CDN - Tailwind Config
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script> //cdn link from tailwind doc
+
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+</body>
+</html>
+
+
+Example - 2  TailwindCli method
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+</body>
+</html>
+
+
+Example 3 - Internal , inline , externalcss
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+
+<style>
+    h2{
+        color: red;
+    }
+</style>
+<body>
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+
+      <p style="color: blue;" >Lorem ipsum dolor sit amet.</p>
+      <h2>Example for internal</h2>
+      <h3 class="customclass" >Example for external</h3>
+</body>
+</html>
+
+
+input.css:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.customclass{
+    color: violet;
+}
+
+
+
+Example 3:
+
+Package.json : add -> scripts property and use command - npm start in terminal
+
+{
+  "scripts": {
+    "start": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build":"npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  }
+}
+
+Example 4: simple example classes for button
+
+//simple button design
+ <button class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+        Click Me
+    </button>
+
+ //Builtin responsive   
+<div class="bg-gray-100 p-4 md:bg-green-100 lg:bg-blue-100">
+        Responsive Background Color
+    </div>
+
+
+Topics wise examples:
+
+ <!-- Color -->
+
+   <p class="text-white mt-10 p-4 bg-black  " >The quick brown fox jumps over the lazy dog.</p>
+   <p class="text-blue-600/100">The quick brown fox...</p>
+   <p class="text-blue-600/75">The quick brown fox...</p>
+   <p class="text-blue-600/50">The quick brown fox...</p>
+   <p class="text-blue-600/25">The quick brown fox...</p>
+   <p class="text-blue-600/0">The quick brown fox...</p>
+
+   <p class="text-slate-500 hover:text-blue-600">The quick brown fox...</p>
+
+   <p class="text-blue-600 md:text-green-600">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, voluptas?
+  </p>
+
+
+  <!-- border color -->
+  <input class="border-2 border-rose-600 m-6 pl-10 ">
+
+  <div class="border-4 border-indigo-500/100 ..."></div>
+<div class="border-4 border-indigo-500/75 ..."></div>
+<div class="border-4 border-indigo-500/50 ..."></div>
+   
+<!-- Custom color -->
+
+.config:
+
+ extend: {   
+      colors: {
+        primary: '#cafc03',  // Custom blue
+        secondary: '#28fc03',  // Custom yellow
+      }
+},
+
+<div class="bg-primary text-white p-4">This is a custom primary color box</div>
+<div class="bg-secondary text-white p-4">This is a custom secondary color box</div>
+
+
+
+<!-- Typography -->
+
+<p class="font-sans">The quick brown fox ...</p>
+<p class="font-serif">The quick brown fox ...</p>
+<p class="font-mono">The quick brown fox ...</p>
+
+ theme: {
+    extend: {   
+      colors: {
+        primary: '#cafc03',  // Custom blue
+        secondary: '#28fc03',  // Custom yellow
+      },
+      fontFamily:{
+        Amsterdam:["New Amsterdam", "sans-serif"]
+      },
+      }}
+
+<!-- custom font -->
+<p class="font-Amsterdam" >Custom Font</p>
+
+<p class="text-sm ...">The quick brown fox ...</p>
+<p class="text-base ...">The quick brown fox ...</p>
+<p class="text-lg ...">The quick brown fox ...</p>
+<p class="text-xl ...">The quick brown fox ...</p>
+<p class="text-2xl ...">The quick brown fox ...</p>
+
+<p class="text-base/6 ...">So I started to walk into the water...</p>
+<p class="text-base/7 ...">So I started to walk into the water...</p>
+<p class="text-base/loose ...">So I started to walk into the water...</p>
+
+<p class="text-sm hover:text-base mt-8 md:text-start sm:text-end text-blue-400">
+    So I started to walk into the water...
+  </p>
+
+
+ <!-- Spaces & Sizes -->
+    <div class="p-6 m-5 w-60 bg-red-500">
+        <p>This box has padding and margin with 50% width......</p>
+    </div>
+
+   
+
+     <!-- Borders -->
+     <div class="border-2 border-red-400 rounded-lg p-6">
+        <h2 class="text-2xl font-semibold mb-4">Card with Border</h2>
+        <p>This card has a gray border and rounded corners.</p>
+    </div>
+
+     <!-- Images -->
+     <img src="box_model.png" class="rounded-lg w-64 h-64 mt-8 mx-auto">
+
+
+
+simple Project :
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind CSS Task</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-blue-200">
+  <div class="max-w-lg mx-auto text-center p-6 bg-white shadow-lg rounded-lg">
+    <!-- Image -->
+    <img src="box_model.png" alt="Sample Image" class="w-48 h-48 mx-auto rounded-full mb-4">
+
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Tailwind CSS</h1>
+
+    <!-- Paragraph -->
+    <p class="text-gray-600 text-lg">
+      This is a simple example of a layout using Tailwind CSS. You can easily create responsive and visually appealing designs using utility-first classes.
+    </p>
+  </div>
+</body>
+</html>

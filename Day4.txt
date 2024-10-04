@@ -1,0 +1,161 @@
+//Hoisting
+
+console.log("a", a);
+var a=10
+display()
+
+function display(){
+    let a=10
+    console.log(a);    
+}
+
+
+//scope
+var x=10 //global
+
+function scope(){
+    let y=20 //function
+    console.log(x);    
+    console.log(y);  
+    
+    if(x<y){
+        console.log(y);
+        let z=30 //local
+        console.log(z);
+    }
+    // console.log(z);
+    
+}
+
+scope()
+console.log(x);    
+console.log(y);  
+
+
+//Array
+let dailyExpenses = [200, 150, 300, 250, 400, 100, 50];
+console.log(dailyExpenses);
+// Output: [200, 150, 300, 250, 400, 100, 50]
+
+dailyExpenses.push(180);
+console.log(dailyExpenses);
+
+dailyExpenses.pop()
+console.log(dailyExpenses);
+
+dailyExpenses.shift()
+console.log(dailyExpenses);
+
+dailyExpenses.unshift(250)
+console.log(dailyExpenses);
+
+const sliceArr=dailyExpenses.slice(1,5) // 1 2 3 4
+console.log(sliceArr);
+console.log(dailyExpenses);
+
+
+// Removing Elements
+const spliceArr= dailyExpenses.splice(1,4)
+console.log(dailyExpenses);
+console.log(spliceArr);
+
+//Adding Elements
+let arr=[1,2,3,4,5]
+arr.splice(1,0, 6) // nothing delete
+console.log(arr);
+
+arr.splice(2,1,7)  //delete 1 value
+console.log(arr);
+
+arr.splice(2,3,8)  //delete 3 values
+console.log(arr);
+
+
+//Replacing Elements
+let spliceReplace = [1,2,3,4,5]
+spliceReplace.splice(2,0,100) //2nd index 100 add
+console.log(spliceReplace);
+
+spliceReplace.splice(2,2,500,100) // replace
+console.log(spliceReplace);
+
+
+//forEach, map , filter
+let mapEx = [100,200,300,400,500];
+
+mapEx.forEach((item, index) => {
+    console.log(`${index} = ${item} `);
+});
+
+const retMap1= mapEx.map(i=>i*2)
+console.log(retMap1);
+
+const retMap = mapEx.map((item)=>{
+    if(item >=300){
+        return item
+    }
+    return 0;
+})
+console.log(retMap);
+
+const redEx= mapEx.filter(i=>i>300)
+console.log(redEx);
+
+const numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+
+for (let num of numbers) {
+  console.log("Number: " + num);
+}
+
+
+
+//Object and JSON Iteration in JavaScript
+let person = {
+    name: "suresh",
+    age: 35,
+    city: "coimbatore"
+  };
+  console.log(person.name);  
+  console.log(Object.keys(person));
+    console.log(Object.values(person));
+
+  for(let key in person){    
+    console.log(`${key}= ${person[key]}`);
+    }
+
+
+    let jsonData = [{
+        name: "suresh",
+        age: 35,
+        city: "coimbatore"
+      },
+      {
+        name: "vel",
+        age: 33,
+        city: "salem"
+      },
+      {
+        name: "rajesh",
+        age: 34,
+        city: "erode"
+      }]
+
+jsonData.forEach((i,ind)=>{
+    console.log(i.name);
+    console.log(i.age);
+    console.log(i.city);    
+})
+
+let result = jsonData.map((i, ind) => {
+    if (i.age > 33) { // Condition: Age must be greater than 25
+        console.log(i.name);
+        console.log(i.age);
+        console.log(i.city);
+        return { name: i.name, age: i.age, city: i.city }; // Returning the filtered user object
+    }
+    return null; // Return null if the condition is not met
+})
+// .filter(item => item !== null); // Filter out null values
+
+console.log(result);

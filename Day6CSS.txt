@@ -1,0 +1,382 @@
+Example1: class selector
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            color: white;
+            font-family: bold;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="highlight" >
+            <h1>CSS</h1>
+            <p>Class selector</p>
+    </div>
+</body>
+</html>
+
+Example2: External file class selector 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" >
+</head>
+<body>
+    <div class="card" >
+            <h1>CSS</h1>
+            <p class="highlight">Class selector</p>
+    </div>
+    <div class="card" >
+        <h1 class="highlight" >CSS</h1>
+        <p>Class selector</p>
+</div>
+</body>
+</html>
+
+
+#style.css /* External CSS using class selector */
+
+.highlight {
+    color: green;
+    font-size: 20px;
+    border: 2px solid red;
+}
+
+.card {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+Example3: id selector internal
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Internal CSS using ID selector */
+        #header {
+            background-color: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+    <title>ID Selector Example</title>
+</head>
+<body>
+    <div id="header">This is a unique header styled using an ID selector.</div>
+    <p>This paragraph is not styled by the ID selector.</p>
+</body>
+</html>
+
+
+Example4: External
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <title>ID Selector Example</title>
+</head>
+<body>
+    
+        <h1 >Welcome to Our Website</h1>
+        <p id="para_content" >This section is uniquely styled using an ID selector.</p>
+    
+</body>
+</html>
+
+style.css
+#para_content {
+    background-color: peachpuff;
+    border: 2px solid black;
+    padding: 15px;
+}
+
+
+Example5:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Class vs ID Example</title>
+</head>
+<body>
+    <div class="box highlight">This box uses a class selector (highlight).</div>
+    <div id="unique-box" class="box">This box uses an ID selector (unique-box) and a class selector (box).</div>
+    <div class="box">This box uses only a class selector (box).</div>
+</body>
+</html>
+
+/* Class selector for common styling */
+.box {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px;
+}
+
+/* Class selector for highlighting */
+.highlight {
+    background-color: yellow;
+}
+
+/* ID selector for unique styling */
+#unique-box {
+    background-color: lightblue;
+    font-weight: bold;
+    color: red;
+}
+
+
+
+Example6: Display (inline)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       .inline-element {
+            display: inline;
+            background-color: lightblue;
+            padding: 5px;
+            margin: 5px;
+            height: 500px;/*this will be ignored */
+            width: 500px;/*this will be ignored */
+        }
+    </style>
+    <title>Display Inline Example</title>
+</head>
+<body>
+    <p>
+        This is some text with an <span class="inline-element">inline element</span> inside it.
+        Here's another <span class="inline-element">inline element</span> to show they appear in the same line.
+    </p>
+</body>
+</html>
+
+Example7 : Display (block)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .block-element {
+            display: block;
+            background-color: lightgreen;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+    <title>Display Block Example</title>
+</head>
+<body>
+    <p>This is a paragraph before the block element.</p>
+    <div class="block-element">This is a block element. It starts on a new line and takes up the full width.</div>
+    <p>This is a paragraph after the block element.</p>
+</body>
+</html>
+
+Example8 : Display (inline-block)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .inline-block-element {
+            display: inline-block;
+            width: 150px;
+            height: 100px;
+            background-color: lightcoral;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+    <title>Display Inline-Block Example</title>
+</head>
+<body>
+    <div class="inline-block-element">Box 1</div>
+    <div class="inline-block-element">Box 2</div>
+    <div class="inline-block-element">Box 3</div>
+</body>
+</html>
+
+Example9: combine (display: inline , block , inline-block)
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .inline-block-example {
+            display: inline-block;
+            /* This makes elements sit side-by-side */
+            width: 150px;
+            /* Width is respected */
+            height: 100px;
+            /* Height is respected */
+            background-color: lightcoral;
+            margin: 10px;
+            /* Margins are respected */
+            padding: 10px;
+            /* Padding is respected */
+            text-align: center;
+            /* Text alignment inside the block */
+        }
+
+        .block-example {
+            display: block;
+            /* Starts on a new line */
+            width: 150px;
+            /* Width is respected */
+            height: 100px;
+            /* Height is respected */
+            background-color: lightgreen;
+            margin: 10px;
+            /* Margins are respected */
+            padding: 10px;
+            /* Padding is respected */
+            text-align: center;
+            /* Text alignment inside the block */
+        }
+
+        .inline-example {
+            display: inline;
+            /* Elements flow in line with text */
+            background-color: lightblue;
+            margin: 10px;
+            /* Margins are respected, but width and height are not */
+            padding: 10px;
+            /* Padding on left/right respected */
+        }
+    </style>
+    <title>Display Inline-Block Example</title>
+</head>
+
+<body>
+    <h2>Inline-Block Example</h2>
+    <div class="inline-block-example">Box 1</div>
+    <div class="inline-block-example">Box 2</div>
+    <div class="inline-block-example">Box 3</div>
+
+    <h2>Block Example</h2>
+    <div class="block-example">Block 1</div>
+    <div class="block-example">Block 2</div>
+    <div class="block-example">Block 3</div>
+
+    <h2>Inline Example</h2>
+    <span class="inline-example">Inline 1</span>
+    <span class="inline-example">Inline 2</span>
+    <span class="inline-example">Inline 3</span>
+</body>
+</html>
+
+
+Example10: Intro to Pseudo-Classes: link, visited, hover, active (a tag)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Unvisited link */
+        a:link {
+            color: blue;
+        }
+        /* Visited link */
+        a:visited {
+            color: purple;
+        }
+        /* Hovered link */
+        a:hover {
+            color: red;
+        }
+        /* Active link */
+        a:active {
+            color: green;
+        }
+    </style>
+    <title>Pseudo-Classes Example</title>
+</head>
+<body>
+    <p>Here are some links to demonstrate pseudo-classes:</p>
+    <a href="https://example1.com">Visit Example (Unvisited Link)</a><br>
+    <a href="https://example2.com">Visit Example Again (Visited Link)</a>
+</body>
+</html>
+
+
+Example11:  Intro to Pseudo-Classes: link, visited, hover, active (button tag)
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classes on Buttons</title>
+    <style>
+        /* Basic button styling */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid #007BFF;
+            background-color: white;
+            color: #007BFF;
+            cursor: pointer;
+        }
+
+        /* Hover state for buttons */
+        button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Active state for buttons */
+        button:active {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>Button Pseudo-Classes Example</h2>
+    <button>Click Me!</button>
+</body>
+</html>

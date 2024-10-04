@@ -1,0 +1,305 @@
+Example:1 flex- wrap
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" >
+</head>
+<body>
+    <div>
+        <h1>A</h1>
+        <h1>B</h1>
+        <h1>C</h1>       
+    </div>
+</body>
+</html>
+
+style.css
+
+div{
+    display:flex;
+    /* flex-direction: column; */
+    /* default flex-direction:row */
+    flex-direction: row;    
+}
+
+h1{
+    margin: 5px;
+    padding: 10px;
+    background-color: aqua;
+}
+
+
+Example: 2  add 3 more item for flex-wrap content
+
+index.html
+<body>
+    <div>
+        <h1>A</h1>
+        <h1>B</h1>
+        <h1>C</h1>       
+        <h1>D</h1>       
+        <h1>E</h1>       
+        <h1>F</h1>       
+    </div>
+</body>
+
+style.css
+div{
+    display:flex;
+    /* flex-direction: column; */
+    /* default flex-direction:row */
+    flex-direction: row;   
+    width: 160px; 
+    background-color: black;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+}
+
+
+Example:3 justify content note: make width comment line
+
+div{
+    display:flex;   
+    flex-direction: row;   
+    /* width: 160px;  */
+    background-color: black;    
+    flex-wrap: wrap;   
+
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: space-between; */
+    justify-content: space-around;
+}
+
+
+Example:4 product display like card
+
+<body>
+    <div class="container" >
+        <div >
+            <img src="css-flex-container-example.png" width="150px" height="150px" >
+            <h5>image name</h5>
+            <p>Lorem ipsum dolor sit amet </p>
+        </div>    
+        <div >
+            <img src="css-flex-container-example.png" width="150px" height="150px" >
+            <h5>image name</h5>
+            <p>Lorem ipsum dolor sit amet </p>
+        </div> 
+
+     Note: copy div tag numbr of times
+
+
+style.css
+
+body{
+    /* font-family: "Poppins", sans-serif; */
+    background-color: brown;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+    /* background-color: black; */
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.container div{   
+    width: 100px;
+    color: black;
+    margin: 25px;
+    /* padding: 5px;   */
+}
+
+Example : 5 flex-grow  , flex-basis  
+
+<body>
+    <div class="container">
+        <h1>1</h1>
+        <h1>2</h1>
+        <h1>3</h1>
+        <h1>4</h1>
+        <h1>5</h1>
+        <h1>6</h1>
+        <h1>7</h1>
+        <h1>8</h1>       
+    </div>
+</body>
+
+style.css
+.container{
+    display: flex;   
+    background-color: black;
+    flex-wrap: wrap;
+
+}
+h1{
+    background-color: aquamarine;
+    /* padding: 10px; */
+    margin: 10px;
+    flex-basis: 20%;
+    flex-grow: 1;    
+}
+
+
+Example :1 Media query 
+
+<body>
+    <h1>Media Query</h1>
+</body>
+
+style.css
+
+h1{
+    color: black;
+}
+
+@media screen and (max-width:500px) {
+    h1{
+        color: red;
+    }
+}
+
+                or
+@media screen and (min-width:500px) {
+    h1{
+        color: red;
+    }
+}
+
+
+Example :2 Media query 
+<body>
+    <div>
+        <p>hai</p>
+    </div>
+</body>
+
+
+div{
+    background-color: blue;
+    height: 100px;
+}
+@media screen and (max-width:900px) {
+    div{
+     background-color: yellow;
+    }
+ }
+
+ @media screen and (max-width:700px) {
+    div{
+     background-color: orange;
+    }
+ }
+@media screen and (max-width:500px) {
+   div{
+    background-color: green;
+   }
+}
+
+
+Example :2 Media query with flex
+
+<body>
+    <div class="container">
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>
+        <div class="flex">A </div>      
+    </div>
+</body>
+
+
+style.css
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.flex{
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    margin: 10px;
+    flex-basis: 20%;
+}
+@media screen and (max-width:700px) {
+    .flex{
+        flex-basis: 40%;
+    }
+}
+@media screen and (max-width:300px) {
+    .flex{
+        flex-basis: 100%;
+    }
+}
+
+
+
+Example: Layout - > show output and give task (student to do)
+
+<body>
+
+        <div class="container">
+            <div class="header">Header</div>
+            <div class="content"><p>Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Minus, adipisci aliquam. Assumenda 
+                reprehenderit ab sit dolorem. Recusandae, quis. Cum,
+                eos! Voluptatum quisquam doloremque dicta molestiae,
+                 iusto magni laudantium sapiente ratione cum voluptatibus
+                  perspiciatis eligendi fugiat ad animi expedita dolorem
+                   amet excepturi qui! Animi sed iste commodi sit, officia,
+                    fuga quod mollitia magnam corrupti totam qui accusamus
+                     nostrum explicabo. Cumque hic praesentium corporis
+                      quisquam aliquam modi quasi esse, nisi fugit, error
+                       labore quibusdam repellat accusamus aliquid quam 
+                       sit rem eos facilis odio itaque cum laborum impedit
+                        quaerat doloremque. Quasi temporibus eaque in autem 
+                        quaerat saepe quod quae sed ipsum! Vero, dignissimos.</p></div>
+            <div class="footer">Footer</div>
+        </div>  
+    
+</body>
+
+style.css
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.header, .footer {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    background-color: lightgreen;   
+    padding: 20px;
+    text-align: center;
+}
+
+
+@media (max-width: 500px) {
+    .container {
+        flex-direction: row; 
+    }  
+
+    .header, .footer {
+        /* flex: 1;  */
+        height: auto; 
+    }
+}

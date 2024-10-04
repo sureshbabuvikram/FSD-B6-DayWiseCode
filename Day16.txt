@@ -1,0 +1,275 @@
+Basic ->Event & Event Listener
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Introduction to Events</title>
+</head>
+<body>
+  <button id="clickMe">Click Me</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+function functionDef(){
+    console.log('button clicked');    
+}
+document.getElementById('clickMe').addEventListener('click',functionDef)
+
+                            or
+
+const button = document.getElementById('clickMe');
+button.addEventListener('click', function() {
+  alert('Button clicked!');
+});
+
+
+Mouse Events -> MouseOver & MouseOut Event:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mouse Events</title>
+</head>
+<body>
+  <div id="hoverBox" style="width: 200px; height: 200px; background-color: lightblue;">Hover over me</div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+const box = document.getElementById('hoverBox');
+
+box.addEventListener('mouseover', function() {
+  box.style.backgroundColor = 'yellow';
+});
+
+box.addEventListener('mouseout', function() {
+  box.style.backgroundColor = 'lightblue';
+});
+
+
+Example 2: 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mouse Events - Double Click</title>
+</head>
+<body>
+  <button id="dblClickBtn">Double-click me</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js
+const button = document.getElementById('dblClickBtn');
+
+button.addEventListener('dblclick', function() {
+  alert('Button double-clicked!');
+});
+
+
+
+Keyboard Events -> keydown, keyup, and keypress
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Keyboard Events</title>
+</head>
+<body>
+  <input type="text" id="textInput" placeholder="Type something">
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+const input = document.getElementById('textInput');
+
+input.addEventListener('keydown', function(event) {
+  console.log(`Key pressed: ${event.key}`);
+});
+
+
+Form Events -> submit, change, focus, and blur
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Form Events</title>
+</head>
+<body>
+  <form id="myForm">
+    <input type="text" name="username" placeholder="Enter username">
+    <button type="submit">Submit</button>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js
+const form = document.getElementById('myForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevents the default form submission
+  alert('Form submitted!');
+});
+
+
+Event Objects:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Object</title>
+</head>
+<body>
+  <button id="myButton">Click me</button>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+const button = document.getElementById('myButton');
+
+button.addEventListener('click', function(event) {
+  console.log('Event Type:', event.type);
+  console.log('Clicked Element:', event.target);
+});
+
+
+ Event Propagation -> event bubbling 
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Propagation</title>
+</head>
+<body>
+  <div id="outer" style="padding: 20px; background-color: lightcoral;">
+    Outer Div
+    <div id="middle" style="padding: 20px; background-color: lightblue;">
+      Middle Div
+      <div id="inner" style="padding: 20px; background-color: lightseagreen;">
+        inner
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+const outerDiv = document.getElementById('outer');
+const middleDiv = document.getElementById('middle');
+const innerDiv = document.getElementById('inner');
+
+outerDiv.addEventListener('click', function() {
+  alert('Outer div clicked');
+});
+
+middleDiv.addEventListener('click', function() {
+    alert('middle div clicked');
+    
+  });
+
+innerDiv.addEventListener('click', function(event) {
+  alert('Inner div clicked');
+  event.stopPropagation(); // Prevents event from bubbling up
+});
+
+Event Capturing:
+same bubbling html file 
+
+script.js:
+
+const outerDiv = document.getElementById('outer');
+const middleDiv = document.getElementById('middle');
+const innerDiv = document.getElementById('inner');
+
+outerDiv.addEventListener('click', function() {
+  alert('Outer div clicked');
+},true);
+
+middleDiv.addEventListener('click', function() {
+    alert('middle div clicked');
+    
+  },true);
+
+innerDiv.addEventListener('click', function(event) {
+  alert('Inner div clicked');
+  event.stopPropagation(); // Prevents event from bubbling up
+},true);
+
+
+
+Event Delegation:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Delegation</title>
+</head>
+<body>
+  <ul id="itemList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <script src="script.js"></script>
+</body>
+</html>
+
+script.js:
+
+const list = document.getElementById('itemList');
+
+list.addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    alert(`You clicked on ${event.target.textContent}`);
+  }
+});
+
+
+Debouncing Event:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Debouncing Example</title>
+</head>
+<body>
+  <p>Scroll the page to see debouncing in action.</p>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+script.js:
+let timeout;
+
+window.addEventListener('scroll', function() {
+  clearTimeout(timeout);
+  timeout = setTimeout(function() {
+    console.log('Scroll event debounced!');
+  }, 200); // 200ms delay
+});
+
+ script.js: Throttling Event
+let timeout;
+
+window.addEventListener('scroll', function() {
+//   clearTimeout(timeout); //Throttling
+  timeout = setTimeout(function() {
+    console.log('Scroll event debounced!');
+  }, 200); // 200ms delay
+});
+
+
+

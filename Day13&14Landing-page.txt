@@ -1,0 +1,714 @@
+Day13 : 
+staring : //header , main , feature sections
+
+structure:
+<div class=" container mx-auto ">
+<header></header>
+<main class=""></main>
+<section class=""> </section>
+</div>
+
+
+//Header
+
+step- 1
+
+  <header class=" ">
+        <div class="">Brainwave.io</div>
+        <nav class=" ">
+            <a href="#" class="hover:text-gray-900">Demos</a>
+            <a href="#" class="hover:text-gray-900">Pages</a>
+            <a href="#" class="hover:text-gray-900">Support</a>
+            <a href="#" class="hover:text-gray-900">Contact</a>       
+        </nav>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Get started free</button>
+    </header>
+
+
+    step- 2    Add class properties in header area
+
+        //header class
+        <header class="flex justify-between items-center px-8 py-4 bg-white shadow-sm ">
+
+        //Brainwave class
+        <div class="text-xl font-semibold text-black">Brainwave.io</div>
+
+        //nav class
+        <nav class="flex space-x-8 text-gray-500">
+
+        //button
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Get started free</button>
+
+
+//overall header section:
+
+<header class="flex justify-between items-center px-8 py-4 bg-white shadow-sm ">
+        <div class="text-xl font-semibold text-black">Brainwave.io</div>
+        <nav class="flex space-x-8 text-gray-500">
+            <a href="#" class="hover:text-gray-900">Demos</a>
+            <a href="#" class="hover:text-gray-900">Pages</a>
+            <a href="#" class="hover:text-gray-900">Support</a>
+            <a href="#" class="hover:text-gray-900">Contact</a>       
+        </nav>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Get started free</button>
+    </header>
+
+
+//Main class
+
+step-1
+
+   <main class="">
+        <h1 class="text">Get things done by awesome remote team</h1>
+        <p class="">We share common trends and strategies for improving your rental income and
+            making sure you stay in high demand.</p>
+        <div class="">
+            <button class="">Get started for free</button>
+            <button class="">Learn  more</button>
+        </div>
+        <div class="">
+            <img src="./assests/firstimage.png" alt="Sessions Overview" class="">
+        </div>
+    </main>
+
+step-2 - Add class properties in main area
+
+//main class
+<main class="text-center mt-14">
+
+//h1
+<h1 class="text-4xl font-bold text-black">
+
+//p
+<p class="mt-4 text-gray-500 ">
+
+//button div
+ <div class="flex justify-center mt-8 space-x-4">
+
+ //1st button
+ <button class="bg-blue-600 text-white px-6 py-3 rounded">
+
+ //2nd button
+  <button class="bg-transparent text-gray-800 border border-gray-800 px-6 py-3 rounded">
+
+//img div
+ <div class="mt-12 flex justify-center ">
+
+ //img tag
+  <img src="./assests/firstimage.png" alt="Sessions Overview" 
+    class="w-2/4 shadow-lg rounded h-1/3">
+
+//overall main section:
+
+ <main class="text-center mt-14">
+        <h1 class="text-4xl font-bold text-black">Get things done by awesome remote team</h1>
+        <p class="mt-4 text-gray-500 ">We share common trends and strategies for improving your rental income and
+            making sure you stay in high demand.</p>
+        <div class="flex justify-center mt-8 space-x-4">
+            <button class="bg-blue-600 text-white px-6 py-3 rounded">Get started for free</button>
+            <button class="bg-transparent text-gray-800 border border-gray-800 px-6 py-3 rounded">Learn  more</button>
+        </div>
+        <div class="mt-12 flex justify-center ">
+            <img src="./assests/firstimage.png" alt="Sessions Overview" class="w-2/4 shadow-lg rounded h-1/3">
+        </div>
+    </main>
+
+
+//Features area
+
+    step:1
+
+      <section class="">
+        <div>
+            <h2 class="">Project management</h2>
+            <p class="">With lots of unique blocks, you can easily build a page without coding.
+                Build your next landing page.</p>
+        </div>       
+    </section>
+
+    step:2
+
+    //section class
+    <section class="mt-12 grid grid-cols-3 gap-10 text-center ">
+
+    //h2 class
+    <h2 class="mt-4 text-xl  font-semibold ">
+
+    //p class
+    <p class="text-gray-700 mt-2 text-cxl">
+
+
+//overall Features class
+
+<section class="mt-12 grid grid-cols-3 gap-10 text-center ">
+        <div>
+            <h2 class="mt-4 text-xl  font-semibold ">Project management</h2>
+            <p class="text-gray-700 mt-2 text-cxl">With lots of unique blocks, you can easily build a page without coding.
+                Build your next landing page.</p>
+        </div>   
+        <div>
+            <h2 class="mt-4 text-xl font-semibold ">Time tracking</h2>
+            <p class="text-gray-700 mt-2 text-cxl">With lots of unique blocks, you can easily build a page without coding.
+                Build your next landing page.</p>
+        </div> 
+        <div>
+            <h2 class="mt-4 text-xl font-semibold ">Beautiful mobile app</h2>
+            <p class="text-gray-700 mt-2 text-cxl ">With lots of unique blocks, you can easily build a page without coding.
+                Build your next landing page.</p>
+        </div>  
+        
+    </section>
+
+
+
+//body content -> second area
+
+structure:
+
+<div class=" container mx-auto ">
+<section class=""> </section>
+<section class=""> </section>
+</div>
+
+step:1
+
+<div class="">
+    <section class="">
+        <div class="">
+          <h2 class="">Getting started with Albino is easier than ever</h2>
+          <p class="">With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.</p>
+          <button class="">Get started for free</button>
+        </div>
+        <div class="">
+          <img src="./assests/secondimage.png" alt="Samuel Spencer" class="">
+        </div>
+      </section>
+  
+      <section class="">
+        <div class="">
+          <div>
+            <h3 class="">1M+</h3>
+            <p class="">Customers visit Albino every month</p>
+          </div>         
+        </div>
+      </section>
+</div>
+
+
+step:2
+
+//1st div
+ <div class="container mx-auto mt-12 bg-gray-100">
+
+//1st section
+    <section class="flex items-center justify-center  py-10">
+
+//1st section 1st div
+        <div class="w-1/2 px-10 text-left">
+
+//h2
+<h2 class="text-xl font-bold text-black">
+
+//p
+<p class="text-cxl mt-4 text-gray-500">
+
+//button
+<button class="bg-blue-600 text-white text-xs px-6 py-3 mt-6 rounded">
+
+//1section 2nd div
+        <div class="w-1/2 flex justify-center ">
+
+//img tag
+<img src="./assests/secondimage.png" alt="Samuel Spencer" class="shadow-sm rounded">
+
+
+//2nd section
+      <section class="bg-white py-14">
+
+//2nd section 1st div
+        <div class="flex justify-around text-center">
+
+//h3
+    <h3 class="text-xl font-bold text-black">
+
+//p
+    <p class="text-cxl text-gray-600 mt-2">
+
+
+//overall body content:
+
+ <div class="container mx-auto mt-12 bg-gray-100">
+    <section class="flex items-center justify-center  py-10">
+        <div class="w-1/2 px-10 text-left">
+          <h2 class="text-xl font-bold text-black">Getting started with Albino is easier than ever</h2>
+          <p class="text-cxl mt-4 text-gray-500">With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.</p>
+          <button class="bg-blue-600 text-white text-xs px-6 py-3 mt-6 rounded">Get started for free</button>
+        </div>
+        <div class="w-1/2 flex justify-center ">
+          <img src="./assests/secondimage.png" alt="Samuel Spencer" class="shadow-sm rounded">
+        </div>
+      </section>
+  
+      <section class="bg-white py-14">
+        <div class="flex justify-around text-center">
+          <div>
+            <h3 class="text-xl font-bold text-black">1M+</h3>
+            <p class="text-cxl text-gray-600 mt-2">Customers visit Albino every month</p>
+          </div> 
+          <div>
+            <h3 class="text-xl font-bold text-black">93%</h3>
+            <p class="text-cxl text-gray-600 mt-2">Satisfaction rate from our customers</p>
+          </div>  
+          <div>
+            <h3 class="text-xl font-bold text-black">4.9</h3>
+            <p class="text-cxl text-gray-600 mt-2">Average customer ratings out of 5.0!</p>
+          </div>      
+        </div>
+      </section>
+</div>
+
+
+//Day14 continuation:
+
+//hero section:
+
+//structure:
+
+<div container> 
+<section>
+    <div>
+        <h2>
+        <p>
+    <div>
+    <div>
+        <div><img></div>
+    </div>
+    <div>
+        <div>
+            <div> 1 </div>
+            <div> 
+                <h3> </h3>
+                <p> </p>
+            </div>
+        </div>
+    </div>
+    </section>
+    </div>
+
+//step:1
+
+<div class="container ">
+        <section class="">
+      <div class="">
+        <h2 class="">Manage your projects fast</h2>
+        <p class="">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+      </div>
+      <div class="">
+        <div class="">
+          <img src="./assests/thirdimage.png" alt="Project Management" class="">
+        </div>
+        <div class="">
+          <div class="">
+            <div class=" ">
+                1
+            </div>
+            <div>
+              <h3 class="">Create a project</h3>
+              <p class="">With lots of unique blocks, you can easily build a page without coding.</p>
+            </div>
+          </div>     
+        </div>
+
+      </div>
+    </section>
+    </div>    
+
+//step2:
+
+//container
+<div class="container mx-auto mt-5">
+
+//section
+<section class="bg-gray-50 py-16">
+
+//1st div
+<div class="text-center mb-12">
+
+//h2
+<h2 class="text-4xl font-bold text-black">
+
+//p
+ <p class="text-gray-600 mt-4 text-sm">
+
+//2nd div in section
+<div class="flex justify-center items-center gap-12">
+
+//1st div in 2nd div
+    <div class="flex justify-center items-center gap-16 ">
+
+
+//img tag
+<img src="./assests/thirdimage.png" alt="Project Management" 
+class="shadow-lg rounded ">
+
+//2nd div in 2nd div
+<div class="space-y-8">
+
+//next div
+<div class="flex items-start space-x-4">
+
+//next div
+    <div class="bg-blue-600 text-white rounded-full 
+       w-8 h-8 text-sm flex items-center justify-center ">
+
+//next div
+     <div class="-mt-1">
+
+//h3
+  <h3 class="text-2xl font-semibold text-black">
+
+//p
+  <p class="text-gray-600 mt-2 text-sm">
+
+
+
+//overall hero section:
+ 
+    <div class="container mx-auto mt-5">
+        <section class="bg-gray-50 py-12">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-black">Manage your projects fast</h2>
+        <p class="text-gray-600 mt-4 text-sm">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+      </div>
+      <div class="flex justify-center items-center gap-16 ">
+        <div class="flex w-96 justify-center ">
+          <img src="./assests/thirdimage.png" alt="Project Management" class="shadow-lg rounded ">
+        </div>
+        <div class="space-y-8 ">
+          <div class="flex items-start space-x-4">
+            <div class="bg-blue-600 text-white rounded-full w-8 h-8 text-sm flex items-center justify-center ">
+                1
+            </div>
+            <div class="-mt-1">
+              <h3 class="text-2xl font-semibold text-black ">Create a project</h3>
+              <p class="text-gray-600 mt-2 text-sm">With lots of unique blocks, you can easily build a page without coding.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="bg-blue-600 text-white rounded-full w-8 h-8 text-sm flex items-center justify-center ">
+              2
+          </div>
+            <div class="-mt-1">
+              <h3 class="text-2xl font-semibold text-black">Assign related people</h3>
+              <p class="text-gray-600 mt-2 text-sm">With lots of unique blocks, you can easily build a page without coding.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+            <div class="bg-blue-600 text-white rounded-full w-8 h-8 text-sm flex items-center justify-center ">
+              3
+          </div>
+            <div class="-mt-1">
+              <h3 class="text-2xl font-semibold text-black">Make it done on-time</h3>
+              <p class="text-gray-600 mt-2 text-sm">With lots of unique blocks, you can easily build a page without coding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>   
+
+
+//testimonial
+
+structure:
+
+<div class="container">
+<div>
+    <div>testimonial-1</div>
+    <div>testimonial-2</div>
+</div>
+</div>
+
+step- 1:
+
+ <div class="">
+      <div class=" ">
+        <!-- Testimonial 1 -->
+        <div class=" ">
+          <img src="./assests/fourthimage.png" alt="Profile picture" class="">
+          <p class="">"You made it so simple"</p>
+          <p class=" ">My new site is so much faster and easier to work with than my old site.</p>
+          <p class="">Corey Valdez</p>
+          <p class="">Founder at Zenix</p>
+        </div>
+           <!-- Testimonial 2 -->
+        <div> </div>
+      </div>
+     </div> 
+
+//step:2
+
+//container
+<div class="container mx-auto mt-20 ">
+
+//div
+<div class="flex justify-center ">
+
+//testinomial -1 div
+ <div class="flex flex-col justify-center items-center ">
+
+//img
+ <img src="./assests/fourthimage.png" alt="Profile picture" 
+          class="w-16 h-16 rounded-full ">
+
+//p
+<p class="text-xl font-bold mt-4">
+<p class=" mt-2 text-gray-600 w-2/4 text-center">
+<p class="mt-8 text-xl text-black font-semibold">
+ <p class="text-gray-500 text-sm mt-1">
+
+
+
+//over testimonial section:
+
+<!-- Testimonial -->
+ <div class="container mx-auto mt-20 ">
+      <div class="flex justify-center ">
+        <!-- Testimonial 1 -->
+        <div class="flex flex-col justify-center items-center ">
+          <img src="./assests/fourthimage.png" alt="Profile picture" 
+          class="w-16 h-16 rounded-full ">
+          <p class="text-xl font-bold mt-4">"You made it so simple"</p>
+          <p class=" mt-2 text-gray-600 w-2/4 text-center">My new site is so much faster and easier to work with than my old site.</p>
+          <p class="mt-8 text-xl text-black font-semibold">Corey Valdez</p>
+          <p class="text-gray-500 text-sm mt-1">Founder at Zenix</p>
+        </div>
+    
+        <!-- Testimonial 2 -->
+        <div class="flex flex-col justify-center items-center ">
+          <img src="./assests/fifthimage.png" alt="Profile picture" class="w-16 h-16 rounded-full ">
+          <p class="text-xl font-bold mt-4">"You made it so simple"</p>
+          <p class=" mt-2 text-gray-600 w-2/4 text-center">My new site is so much faster and easier to work with than my old site.</p>
+          <p class="mt-8 text-xl text-black font-semibold">Corey Valdez</p>
+          <p class="text-gray-500 text-sm mt-1">Founder at Zenix</p>
+        </div>
+      </div>
+  </div>
+
+  //Pricing & Plan Section:
+
+  //structure:
+    <div class="container>
+      <section>
+          <div>
+              <h2> </h2>
+              <p> </p>
+
+              <div class=flex>
+                    <!-- Basic Plan -->
+                    <!-- Standard Plan -->
+                    <!-- Premium Plan -->
+                </div>
+
+                <div>
+                      content-diaplay
+                <div>
+          </div>
+      </section>
+      </div>
+
+  //step:1
+
+     <div class="">
+      <section class="">
+          <div class="">
+            <h2 class="">Pricing & Plans</h2>
+            <p class="">With lots of unique blocks, you can easily build a page without coding.
+               Build your next landing page.</p>
+            
+            <div class="">
+              <!-- Basic Plan -->
+              <div class="">
+                <span class="">BASIC</span>
+                <h3 class="">$29</h3>
+                <p class="">One time purchase</p>
+                <p class="">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                <button class="">Get started for free</button>
+              </div>
+              
+               <!-- other Plans copy paste -->
+
+            </div>
+             
+            <div class="">
+              <div class="">
+                <div class=""></div>
+                <div>
+                  <h4 class="">Can I use Albino for my clients?</h4>
+                  <p class="">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Intuitive timeline sagittis interdum halkanastra.</p>
+                  <a href="#" class="">Click to learn more ›</a>
+                </div>
+              </div>
+            
+            //other 3-flex items copy paste
+             
+              
+              </div>
+            </div>
+            
+            <p class="">
+              Haven't got your answer? 
+              <a href="#" class="">Contact our support now</a>
+            </p>
+          </div>
+        </section>
+  </div>
+
+
+  //step2:
+
+     <div class="container mx-auto mt-5">
+
+      <section class="bg-gray-900 text-white py-16">
+
+        <div class="max-w-6xl mx-auto px-4">
+
+            <h2 class="text-3xl font-bold text-center mb-4">
+
+            <p class="text-center text-gray-400 mb-12">
+            
+            <div class="flex justify-center space-x-8 mb-16">
+
+              <!-- Basic Plan -->              
+              <div class="bg-white text-gray-900 rounded-lg shadow-lg p-8 flex
+               flex-col items-center">
+
+                <span class="text-indigo-600 font-semibold mb-4">
+
+                <h3 class="text-4xl font-bold mb-2">
+
+                <p class="text-gray-600 mb-6">
+
+                <p class="text-center text-gray-600 mb-8">
+                
+                <button class="bg-indigo-600 text-white px-6 py-3 
+                rounded-full w-full">
+                
+              </div>
+              
+               <!-- other Plans copy paste -->
+
+            </div>
+             
+            <div class="grid grid-cols-2 gap-8">
+
+              <div class="flex items-start space-x-4">
+
+                <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full"></div>
+
+                <div>
+                  <h4 class="font-semibold mb-2">
+
+                  <p class="text-gray-400 mb-2">
+
+                  <a href="#" class="text-indigo-400  ">
+                 
+                </div>
+              </div>
+            
+            //other 3-flex items copy paste
+             
+              
+              </div>
+            </div>
+            
+            <p class="text-center mt-12 text-gray-400">              
+              <a href="#" class="text-indigo-400"></a>
+            </p>
+
+          </div>
+        </section>
+  </div>
+
+
+
+  //overall Pricing & Plan Section:
+
+   <div class="container mx-auto mt-5">
+      <section class="bg-gray-900 text-white py-16">
+          <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Pricing & Plans</h2>
+            <p class="text-center text-gray-400 mb-12">With lots of unique blocks, you can easily build a page without coding.
+               Build your next landing page.</p>
+            
+            <div class="flex justify-center space-x-8 mb-16">
+              <!-- Basic Plan -->
+              <div class="bg-white text-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <span class="text-indigo-600 font-semibold mb-4">BASIC</span>
+                <h3 class="text-4xl font-bold mb-2">$29</h3>
+                <p class="text-gray-600 mb-6">One time purchase</p>
+                <p class="text-center text-gray-600 mb-8">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                <button class="bg-indigo-600 text-white px-6 py-3 rounded-full w-full">Get started for free</button>
+              </div>
+              
+              <!-- Standard Plan -->
+              <div class="bg-white text-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <span class="text-indigo-600 font-semibold mb-4">STANDARD</span>
+                <h3 class="text-4xl font-bold mb-2">$49</h3>
+                <p class="text-gray-600 mb-6">One time purchase</p>
+                <p class="text-center text-gray-600 mb-8">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                <button class="bg-indigo-600 text-white px-6 py-3 rounded-full w-full">Get started for free</button>
+              </div>
+              
+              <!-- Premium Plan -->
+              <div class="bg-white text-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center">
+                <span class="text-indigo-600 font-semibold mb-4">PREMIUM</span>
+                <h3 class="text-4xl font-bold mb-2">$99</h3>
+                <p class="text-gray-600 mb-6">One time purchase</p>
+                <p class="text-center text-gray-600 mb-8">With lots of unique blocks, you can easily build a page without coding. Build your next landing page.</p>
+                <button class="bg-indigo-600 text-white px-6 py-3 rounded-full w-full">Get started for free</button>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8">
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full"></div>
+                <div>
+                  <h4 class="font-semibold mb-2">Can I use Albino for my clients?</h4>
+                  <p class="text-gray-400 mb-2">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Intuitive timeline sagittis interdum halkanastra.</p>
+                  <a href="#" class="text-indigo-400 ">Click to learn more ›</a>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full"></div>
+                <div>
+                  <h4 class="font-semibold mb-2">Does it work with WordPress?</h4>
+                  <p class="text-gray-400 mb-2">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Intuitive timeline sagittis interdum halkanastra.</p>
+                  <a href="#" class="text-indigo-400 ">Click to learn more ›</a>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full"></div>
+                <div>
+                  <h4 class="font-semibold mb-2">Do I get free updates?</h4>
+                  <p class="text-gray-400 mb-2">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Intuitive timeline sagittis interdum halkanastra.</p>
+                  <a href="#" class="text-indigo-400 ">Click to learn more ›</a>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <div class="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full"></div>
+                <div>
+                  <h4 class="font-semibold mb-2">Will you provide support?</h4>
+                  <p class="text-gray-400 mb-2">With lots of unique blocks, you can easily build a page without coding. Build your next landing page. Intuitive timeline sagittis interdum halkanastra.</p>
+                  <a href="#" class="text-indigo-400  inline-block">Click to learn more ›</a>
+                </div>
+              </div>
+            </div>
+            
+            <p class="text-center mt-12 text-gray-400">
+              Haven't got your answer? 
+              <a href="#" class="text-indigo-400">Contact our support now</a>
+            </p>
+          </div>
+        </section>
+  </div>

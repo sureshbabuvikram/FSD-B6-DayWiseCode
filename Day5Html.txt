@@ -1,0 +1,191 @@
+Example:1 basic tags
+
+<!-- <!DOCTYPE html> HTML5 - version and standard mode indication -->
+<!DOCTYPE html>
+<!-- lang="en" indicates that the content of the webpage is in English. -->
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is a paragraph of text on my website.</p>
+    <a href="https://my-portfolio-three-gamma-85.vercel.app/">my profile</a>
+    <img src="backgroundA.png" alt="A descriptive image">
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+</body>
+</html>
+
+
+
+Example2 : Div & Span
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: brown;">
+        <h1>Div & Span </h1>
+        <p style="color: aqua;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            <span style="color: blue;" >Eum mollitia eos sit maiores necessitatibus,</span> 
+            impedit et sint, ex fuga repudiandae,
+             quam eaque dignissimos sapiente excepturi?</p>
+        <img>
+    </div>
+    <div style="background-color: yellow;">
+        <h1>Div & Span </h1>
+        <p></p>
+        <img>
+    </div>
+</body>
+</html>
+
+
+
+Example3: semantics
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Blog</title>
+</head>
+<body>
+<div style="background-color: beige;">
+       <!-- Header Section -->
+       <header>
+        <h1>My Personal Blog</h1>
+        <p>Welcome to my personal blog about web development and programming!</p>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Article Section -->
+        <article>
+            <h2>Understanding Semantic HTML</h2>
+            <p>Semantic HTML introduces meaning to web page elements, making the web more accessible and SEO-friendly.</p>
+        </article>
+
+        <!-- Aside Section -->
+        <aside>
+            <h3>About the Author</h3>
+            <p>I am a web developer with a passion for teaching and blogging about coding practices.</p>
+        </aside>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+    </footer>
+</div>
+ 
+
+</body>
+</html>
+
+
+Example4: Form
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <script>
+        function alertMessage(){
+            alert("registered successfully")
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Register</h1>
+
+    <!-- Form starts here -->
+    <form  onsubmit="alertMessage()">
+    <!-- <form action="/submit_registration" method="POST"> -->
+        <!-- Text Input for Name -->
+        <!-- The for attribute value matches the id of the corresponding input element. -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <!-- Email Input -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- Password Input -->
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <!-- Submit Button -->
+        <button type="submit">Register</button>
+    </form>
+
+</body>
+</html>
+
+
+Example5: Table
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learner Batch Information</title>
+</head>
+<body>
+
+    <h1>Learner Batch Information</h1>
+
+    <!-- Start of the table with cellpadding, cellspacing, width, and border attributes -->
+    <table  cellpadding="20" cellspacing="10" width="80%" border="2">
+        <thead>
+            <tr>
+                <th >Learner Name</th>
+                <th >Batch</th>
+                <th >Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alex Johnson</td>
+                <td>Batch A</td>
+                <td>Active</td>
+            </tr>
+            <tr>
+                <td>Maria Garcia</td>
+                <td>Batch B</td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>David Lee</td>
+                <td>Batch A</td>
+                <td>Inactive</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total Learners: 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

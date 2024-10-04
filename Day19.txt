@@ -1,0 +1,177 @@
+Example: try catch -> synchronous operation
+
+try {
+    let result = 10 / 0;
+    console.log(result);  
+    throw new Error("Custom Error!");  
+  } catch (error) {
+    console.error("An error occurred:", error.message);
+  } finally {
+    console.log("This will always run.");
+  }
+  
+
+index.html:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch Method</h1>
+    <button onclick="getData()" >GetData</button>
+    <button onclick="postData()">PostData</button>
+    <button onclick="putData()" >PutData</button>
+    <button onclick="deleteData()" >DeleteData</button>
+    <pre id="responseContent"></pre>
+</body>
+<script src="script.js"></script>
+</html>
+
+
+
+script.js
+CURD operation using mockAPI
+
+const getData = async()=>{
+  await fetch('https://66f2c0a971c84d805876910e.mockapi.io/products')
+  .then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json(); 
+  })
+  .then(data => {
+  console.log('Data fetched successfully:', data);
+  document.getElementById('responseContent')
+  .textContent = JSON.stringify(data, null, 2);
+
+  })
+  .catch(error => {
+  console.error('There was a problem with the fetch operation:', error);
+  document.getElementById('responseContent').textContent = 'Error: ' + error.message; 
+  });
+}
+
+const postData = async()=>{
+  await fetch('https://66f2c0a971c84d805876910e.mockapi.io/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({        
+        name: 'laptop2',
+        price: 100000
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Post created successfully:', data); 
+        document.getElementById('responseContent')
+        .textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('There was a problem with the post operation:', error);
+        document.getElementById('responseContent').textContent = 'Error: ' + error.message; 
+      });
+    
+}
+
+
+const putData = async()=>{
+  await fetch('https://66f2c0a971c84d805876910e.mockapi.io/products/16', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({          
+        name: 'Mac',
+        price: 50000
+      }),
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('updated  successfully:', data); 
+        document.getElementById('responseContent')
+        .textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('There was a problem with the put operation:', error); 
+        document.getElementById('responseContent').textContent = 'Error: ' + error.message;
+      });
+    
+}
+
+
+const deleteData = async()=>{
+  await fetch('https://66f2c0a971c84d805876910e.mockapi.io/products/16',
+  {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      }      
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Deleted  successfully:', data); 
+        document.getElementById('responseContent')
+        .textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('There was a problem with the delete operation:', error); 
+        document.getElementById('responseContent').textContent = 'Error: ' + error.message;
+      });
+    
+}
+
+//Explanation for the this below statement used in script.js
+
+JSON.stringify(data, null, 2):
+
+JSON.stringify() converts a JavaScript object or array into a JSON-formatted string.
+data: This is the JSON response fetched from the API.
+null: The second parameter allows you to apply a filter (or replacer) to transform the result, but here we don't need that, so it’s null.
+2: The third parameter specifies the indentation level for the formatted JSON output. Using 2 adds two spaces of indentation, making the JSON easier to read.
+
+
+try catch -> async await
+
+const deleteData = async()=>{
+    try {
+     const response=   await fetch('https://66f2572271c84d805874d421.mockapi.io/product/57',
+            {
+                method: 'DELETE',
+                headers: {
+                  'Content-Type': 'application/json',
+                }      
+              })
+              if (!response.ok) {
+                throw new Error('Network response was not ok');
+              }
+        const data =await response.json()
+        console.log(data);        
+        
+    } catch (error) {
+        console.log("error->",error);
+        
+    }
+}
+

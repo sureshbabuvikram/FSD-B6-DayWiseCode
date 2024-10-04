@@ -1,0 +1,105 @@
+
+//Alert and Prompt 
+alert("welcome to javascript")
+
+let names=prompt("enter the value")
+console.log(names);
+
+let a=Number(prompt("enter the value"))
+console.log(a + a);
+
+
+//Operators
+let x = 10;
+let y = 3;
+
+console.log(x + y); // Output: 13
+console.log(x - y); // Output: 7
+console.log(x * y); // Output: 30
+console.log(x / y); // Output: 3.3333...
+console.log(x % y); // Output: 1
+console.log(x ** y); // Output: 1000 (10^3)
+
+
+let a = true;
+let b = false;
+
+console.log(a && b); // Output: false (both must be true)
+console.log(a || b); // Output: true (at least one is true)
+console.log(!a);     // Output: false (inverts true to false)
+
+let c=10
+let d=20;
+console.log(c==10 && d==20);
+console.log(c==10 && d==10);
+console.log(c==10 || d==10);
+console.log(c==20 || d==10);
+console.log(!c==10);     // 
+
+//Variables
+var name = "Suresh";
+let age = 35;
+const country = "Tamilnadu";
+
+let _a=10  , let _1a=10 
+let 1a=10 // error
+
+console.log(name);  
+console.log(age); 
+console.log(country); 
+
+//Difference between let and var
+console.log(a); 
+var a = 5;
+
+console.log(b); 
+let b = 10;
+
+var c = 1;
+var c = 2; // No error, c is re-declared
+console.log(c);
+
+let s= 1;
+let s = 2; // SyntaxError: Identifier 'd' has already been declared
+
+
+
+//datatypes:
+
+// String: Text data, enclosed in quotes.
+	let greeting = "Hello, World!";
+
+// Number: Numeric data, including integers and floating-point numbers.
+    console.log(greeting);
+    
+	let score = 95;
+let temperature = 36.6;
+
+    console.log(score);
+    console.log(temperature);
+    
+// Boolean: Logical data, either true or false.
+
+let isLoggedIn = true;
+    console.log(isLoggedIn);
+    
+// Null: A special value representing "no value."
+
+let empty = null;
+console.log(empty);
+
+// Object: A complex data type used to store collections of data.
+
+let person = {
+  name: "Suresh",
+  age: 35,
+  isStudent: false
+};
+console.log(person);
+console.log(person.name);
+
+// Array: A special type of object used to store lists of values.
+
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers);
+console.log(numbers[2]);
